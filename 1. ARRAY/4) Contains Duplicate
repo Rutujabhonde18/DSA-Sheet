@@ -1,0 +1,25 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+bool findDuplicate(vector<int> nums)
+{
+	int n = nums.size();
+	for(int i=0; i<n-1; i++){
+		for(int j=i+1; j<n; j++){
+			if(nums[i] == nums[j])
+				return true;
+		}
+	}
+	return false;
+}
+
+int main()
+{
+	vector<int> nums = {1,2,3,3,5};
+	cout<<findDuplicate(nums);
+	return 0;
+}
+
+Output:
+
+1
