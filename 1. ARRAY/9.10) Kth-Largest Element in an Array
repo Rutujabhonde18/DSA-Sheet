@@ -21,3 +21,6 @@ int main() {
 
     return 0;
 }
+OUTPUT :
+
+The 2th largest Element : 5
