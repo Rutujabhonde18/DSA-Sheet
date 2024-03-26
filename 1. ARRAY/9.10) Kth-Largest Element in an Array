@@ -1,1 +1,23 @@
+// Online C++ compiler to run C++ program online
+#include <bits/stdc++.h>
+using namespace std;
 
+int findKthLargest(vector<int>& nums, int k) {
+        priority_queue<int>p;
+        for(int i=0; i<nums.size(); i++){
+            p.push(nums[i]);
+        }
+        while(k != 1){
+            p.pop();
+            k--;
+        }
+        return p.top();
+    }
+
+int main() {
+    vector<int> nums = {3,2,1,5,6,4};
+    int k = 2;
+    cout<<"The "<<k<<"th largest Element : "<<findKthLargest(nums, k);
+
+    return 0;
+}
