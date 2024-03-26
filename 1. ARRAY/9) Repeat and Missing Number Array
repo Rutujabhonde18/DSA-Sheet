@@ -33,3 +33,7 @@ int main() {
     
     return 0;
 }
+
+OUTPUT :
+
+Repeat Number : 3, Missing Number : 4
