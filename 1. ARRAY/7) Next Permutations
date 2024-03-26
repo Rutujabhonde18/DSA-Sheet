@@ -1,0 +1,51 @@
+// Online C++ compiler to run C++ program online
+#include <bits/stdc++.h>
+using namespace std;
+
+void nextPermutation(vector<int>& nums) {
+    int n = nums.size();
+
+    //find breakpoint
+    int idx = -1; //breakpoint
+    for(int i = n-2; i >= 0; i--){
+        if(nums[i] < nums[i+1]){
+            idx = i;
+            break;
+        }
+    }
+    if(idx != -1){
+        //find next greater element & swap with idx
+        for(int i = n-1; i > idx; i--){
+            if(nums[i] > nums[idx]){
+                swap(nums[i], nums[idx]);
+                break;
+            }
+        }
+    }
+    //Reverse right half
+    reverse(nums.begin()+idx+1, nums.end());
+}
+
+int main() {
+    vector<int> nums = {1,1,5};
+    
+     cout << "Original sequence: ";
+    for (int num : nums) {
+        cout << num << " ";
+    }
+    cout << endl;
+
+    nextPermutation(nums);
+
+    cout << "Next permutation: ";
+    for (int num : nums) {
+        cout << num << " ";
+    }
+    cout << endl;
+    return 0;
+}
+
+OUTPUT :
+
+Original sequence: 1 1 5 
+Next permutation: 1 5 1 
