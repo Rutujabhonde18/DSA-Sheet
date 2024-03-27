@@ -1,0 +1,26 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int trap(vector<int>& h) 
+{
+    int l=0, r=h.size()-1;
+    int lmax=INT_MIN, rmax=INT_MIN;
+    int ans = 0;
+    while(l<r){
+        lmax = max(lmax, h[l]);
+        rmax = max(rmax, h[r]);
+        ans += (lmax<rmax) ? lmax-h[l++] : rmax-h[r--];
+    }
+    return ans;
+}
+
+int main() 
+{
+    vector<int> height = {4,2,0,3,2,5};
+    cout<<"Trapped water : "<<trap(height);
+    return 0;
+}
+
+Output:
+
+Trapped water : 9
